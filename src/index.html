@@ -1,22 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Sample Site</title>
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <style>
-    body { padding-top: 50px; }
-  </style>
-</head>
 <body>
 
   <div class="container">
     <div class="jumbotron">
       <h1>Welcome</h1>
-      <a href="#" id="ipostTest">Click here</a>
+      <a href="#" id="ipostTest">Click here!</a>
     </div>
   </div>
-
   <script>
     (function(d, s, u, a) {
       a = d.createElement(s);
@@ -27,13 +18,13 @@
       a.onload = function() {
         a.parentNode.removeChild(a);
       };
-    })(document, 'script', 'https://js.g003.enterprise.ipost.com/static/pref/img/client/k/kink_testing_zone/WEH/iPost-Web-Tracking-qqb7dlnq5qjcsbkmerjfknnmeqjcp30-V1.js');
+    })(document, 'script', 'https://js.g003.enterprise.ipost.com/static/pref/img/client/k/kink_testing_zone/WEH/iPost-Web-Tracking-qqb7dlnq5qjcsbkmerjfknnmeqjcpb0-V1.js');
     
     document.getElementById('ipostTest').addEventListener('click', function () {
       console.log('running the script');
       const dataObj = {};
 
-      dataObj.ConversionPage = '/iPost';
+      dataObj.ConversionPage = '/index';
       dataObj.ConversionType = 'order';
       dataObj.OrderId = '12345';
       dataObj.OrderGrandTotal = 19.99;

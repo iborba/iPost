@@ -1,16 +1,19 @@
-'use strict';
 const express = require('express');
+const cors = require('cors');
 const path = require('path');
-const serverless = require('serverless-http');
-const app = express();
 
-const router = express.Router();
-router.get('/', (req, res) => {
-  res.writeHead(200, { 'Content-Type': 'text/html' });
-  res.write('<h1>Hello from Express.js!</h1>');
-  res.sendFile(path.join(__dirname, '/index.html'));
-  res.end();
+const app = express();
+app.use(cors())
+const port = process.env.PORT || 3131;
+
+// sendFile will go here
+app.get('/', function(req, res) {
+  res.redirect('/index')
 });
 
-module.exports = app;
-module.exports.handler = serverless(app);
+app.get('/index', function(req, res) {
+  res.sendFile(path.join(__dirname, '/index.html'));
+});
+
+app.listen(port);
+console.log('Server started at http://localhost:' + port);
