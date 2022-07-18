@@ -5,7 +5,7 @@ const app = express();
 const port = process.env.PORT || 8443;
 
 // sendFile will go here
-app.get('/iPost', function(req, res) {
+app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname, '/index.html'));
 });
 
