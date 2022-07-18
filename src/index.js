@@ -1,13 +1,16 @@
+'use strict';
 const express = require('express');
 const path = require('path');
-
+const serverless = require('serverless-http');
 const app = express();
-const port = process.env.PORT || 8443;
 
-// sendFile will go here
-app.get('/', function(req, res) {
+const router = express.Router();
+router.get('/', (req, res) => {
+  res.writeHead(200, { 'Content-Type': 'text/html' });
+  res.write('<h1>Hello from Express.js!</h1>');
   res.sendFile(path.join(__dirname, '/index.html'));
+  res.end();
 });
 
-app.listen(port);
-console.log('Server started at ' + port);
+module.exports = app;
+module.exports.handler = serverless(app);
