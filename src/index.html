@@ -1,47 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
 <body>
-
-  <div class="container">
-    <div class="jumbotron">
+  <div>
+    <div>
       <h1>Welcome</h1>
       <a href="#" id="ipostTest">Click here!</a>
     </div>
   </div>
-  <script>
-    (function(d, s, u, a) {
-      a = d.createElement(s);
-      a.async = 1;
-      a.src = u;
-      d.body.appendChild(a);
-
-      a.onload = function() {
-        a.parentNode.removeChild(a);
-      };
-    })(document, 'script', 'https://js.g003.enterprise.ipost.com/static/pref/img/client/k/kink_testing_zone/WEH/iPost-Web-Tracking-qqb7dlnq5qjcsbkmerjfknnmeqjcpr0-V1.js');
-    
-    document.getElementById('ipostTest').addEventListener('click', function () {
-      console.log('running the script');
-      const dataObj = {};
-
-      dataObj.ConversionPage = '/index';
-      dataObj.ConversionType = 'order';
-      dataObj.OrderId = '12345';
-      dataObj.OrderGrandTotal = 19.99;
-      dataObj.OrderDate = new Date().toISOString();
-
-      dataObj.items = [{
-        Title: 'shoot',
-        SKU: 'random',
-        Price: 19.99,
-        Quantity: 1
-      }]
-
-      window.iPostAnalytic.send({ conversion: dataObj });
-    
-      console.log('items sent', dataObj);
-    })
-
-  </script>
 </body>
+<script>
+  (function(d, s, u, a) {
+    a = d.createElement(s);
+    a.async = 1;
+    a.src = u;
+    d.body.appendChild(a);
+
+    a.onload = function() {
+      a.parentNode.removeChild(a);
+    };
+  })(document, 'script', 'https://js.g003.enterprise.ipost.com/static/pref/img/client/k/kink_testing_zone/WEH/iPost-Web-Tracking-qqb7dlnq5qjcsbkmerjfknnmeqjcpr0-V1.js');
+  
+  document.getElementById('ipostTest').addEventListener('click', function () {
+    console.log('running the script');
+    const dataObj = {};
+
+    dataObj.ConversionPage = '/index';
+    dataObj.ConversionType = 'order';
+    dataObj.OrderId = '12345';
+    dataObj.OrderGrandTotal = 19.99;
+    dataObj.OrderDate = new Date().toISOString();
+
+    dataObj.items = [{
+      Title: 'shoot',
+      SKU: 'random',
+      Price: 19.99,
+      Quantity: 1
+    }]
+
+    window.iPostAnalytic.send({ conversion: dataObj });
+  
+    console.log('items sent', dataObj);
+  })
+
+</script>
 </html>
